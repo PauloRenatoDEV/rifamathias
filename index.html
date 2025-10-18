@@ -1025,8 +1025,8 @@ const firebaseConfig = {
 };
 
 // Inicializa Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // Referência principal onde vamos manter os números (obj keyed por numero)
 const raffleRef = db.ref('raffleNumbers');
