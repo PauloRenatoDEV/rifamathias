@@ -976,7 +976,9 @@
 
         function init() {
             // Escutar mudanças em tempo real com Firestore
-            unsubscribe =
+            unsubscribe = raffleCollection.onSnapshot((snapshot) => {
+    if (snapshot.empty) {
+        // Inicializar
                     raffleNumbers = [];
                     snapshot.forEach((doc) => {
                         raffleNumbers.push({
