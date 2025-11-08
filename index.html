@@ -978,9 +978,9 @@
             // Escutar mudanças em tempo real com Firestore
             unsubscribe = raffleCollection.onSnapshot((snapshot) => {
                 if (snapshot.empty) {
-                    // Inicializar números se não existirem
-                    initializeNumbers();
-                } else {
+    console.warn("Coleção vazia. Números NÃO serão recriados automaticamente.");
+    // NÃO chamar initializeNumbers aqui!
+} else {
                     raffleNumbers = [];
                     snapshot.forEach((doc) => {
                         raffleNumbers.push({
